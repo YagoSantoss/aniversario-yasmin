@@ -1086,9 +1086,7 @@ const CFG = {
      LÓGICA
 ══════════════════════════════════════════ -->
 <script>
-/* ── Service Worker ── */
-if ('serviceWorker' in navigator)
-  navigator.serviceWorker.register('sw.js').catch(()=>{});
+
 
 /* ── Preencher dados básicos ── */
 document.getElementById('homeTitulo').textContent = 'Para ' + CFG.nomePessoa + ' 🌻 ';
