@@ -115,7 +115,7 @@
   /* Fórmulas químicas decorativas */
   .quim-bg {
     position:absolute; inset:0; pointer-events:none; z-index:0;
-    overflow:hidden; opacity:.06;
+    overflow:hidden; opacity: 5;
   }
  
   .quim-bg span {
@@ -468,50 +468,114 @@
      SURPRESA 🎁
   ════════════════════════════════════════ */
   .tab-btn.bloqueada .tab-icon { filter:grayscale(1); }
-  .tab-lock { position:absolute; top:1px; right:4px; font-size:9px; animation:piscar 2s ease-in-out infinite; }
+.tab-lock {
+  position:absolute;
+  top:1px;
+  right:4px;
+  font-size:9px;
+  animation:piscar 2s ease-in-out infinite;
+}
 
-  #tSurpresa {
-    background: radial-gradient(ellipse at 50% 30%, #2C1A00 0%, #1A0E00 50%, #0D0700 100%);
-    justify-content:flex-start; gap:0; transition:background .6s;
-  }
+#tSurpresa {
+  background:var(--cream);
+  justify-content:flex-start;
+  gap:0;
+  transition:background .6s;
+}
 
-  /* ESTADO BLOQUEADO */
-  .surp-lock {
-    display:flex; flex-direction:column; align-items:center;
-    justify-content:center; text-align:center; gap:22px;
-    min-height:calc(100vh - 140px); padding:0 24px; width:100%;
-  }
-  #cvSurpLock { position:absolute; inset:0; pointer-events:none; z-index:1; }
+/* ESTADO BLOQUEADO */
+.surp-lock {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:22px;
+  min-height:calc(100vh - 140px);
+  padding:0 24px;
+  width:100%;
+}
 
-  .surp-cadeado {
-    font-size:76px; position:relative; z-index:2;
-    animation:cadeadoPulse 2.4s ease-in-out infinite;
-    filter:drop-shadow(0 0 24px rgba(245,196,48,.4));
-  }
-  @keyframes cadeadoPulse {
-    0%,100%{ transform:scale(1);   filter:drop-shadow(0 0 16px rgba(245,196,48,.3)); }
-    50%    { transform:scale(1.1); filter:drop-shadow(0 0 40px rgba(245,196,48,.8)); }
-  }
+#cvSurpLock {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
 
-  .surp-titulo-lock {
-    font-family:var(--fd); font-size:clamp(22px,6vw,32px);
-    font-weight:700; color:var(--sun-light);
-    text-shadow:0 0 30px rgba(245,196,48,.4);
-    position:relative; z-index:2;
-  }
-  .surp-sub-lock {
-    font-family:var(--fb); font-size:clamp(13px,3.5vw,15px);
-    color:rgba(253,230,138,.6); font-style:italic;
-    line-height:1.75; max-width:290px; position:relative; z-index:2;
-  }
-  .surp-ctr { text-align:center; position:relative; z-index:2; }
-  .surp-ctr .ctr-label { color:rgba(253,230,138,.65); }
-  .surp-ctr .ctr-item  { background:rgba(245,196,48,.08); border-color:rgba(245,196,48,.2); }
-  .surp-ctr .ctr-num   { color:var(--sun); }
+.surp-cadeado {
+  font-size:76px;
+  position:relative;
+  z-index:2;
+  animation:cadeadoPulse 2.4s ease-in-out infinite;
+  filter:drop-shadow(0 0 24px rgba(245,196,48,.4));
+}
 
-  /* ESTADO REVELADO */
-  .surp-rev { display:none; flex-direction:column; align-items:center; gap:0; width:100%; padding-bottom:20px; }
-  .surp-rev.show { display:flex; }
+@keyframes cadeadoPulse {
+  0%,100%{
+    transform:scale(1);
+    filter:drop-shadow(0 0 16px rgba(245,196,48,.3));
+  }
+  50%{
+    transform:scale(1.1);
+    filter:drop-shadow(0 0 40px rgba(245,196,48,.8));
+  }
+}
+
+/* 🔥 TEXTOS MAIS ESCUROS */
+.surp-titulo-lock {
+  font-family:var(--fd);
+  font-size:clamp(22px,6vw,32px);
+  font-weight:700;
+  color:#b8860b; /* mais escuro */
+  text-shadow:0 0 12px rgba(0,0,0,.25);
+  position:relative;
+  z-index:2;
+}
+
+.surp-sub-lock {
+  font-family:var(--fb);
+  font-size:clamp(13px,3.5vw,15px);
+  color:rgba(80,60,0,.85); /* bem mais legível */
+  font-style:italic;
+  line-height:1.75;
+  max-width:290px;
+  position:relative;
+  z-index:2;
+}
+
+.surp-ctr {
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.surp-ctr .ctr-label {
+  color:rgba(90,70,0,.85);
+}
+
+.surp-ctr .ctr-item {
+  background:rgba(180,140,20,.12);
+  border-color:rgba(180,140,20,.35);
+}
+
+.surp-ctr .ctr-num {
+  color:#8a6500;
+}
+
+/* ESTADO REVELADO */
+.surp-rev {
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+  width:100%;
+  padding-bottom:20px;
+}
+
+.surp-rev.show {
+  display:flex;
+}
 
   /* Cabeçalho épico */
   .surp-topo {
@@ -910,8 +974,8 @@ const CFG = {
   dataEspecial: new Date(2026, 3, 20, 0, 0, 0), // 20 abril 2026
 
   /* ── carta ── */
-  texto1: `Você escolheu curar o mundo com ciência e delicadeza — e enquanto estuda cada molécula, cada fórmula, cada reação, eu estudo você. Aprendi que o remédio mais poderoso não está em nenhum frasco: é o seu sorriso.`,
-  texto2: `Que essa data seja mais um marco na sua linda trajetória na farmácia. Você é feita da mesma matéria dos girassóis — sempre voltada para a luz, sempre crescendo, sempre linda. Te amo muito.`,
+  texto1: `Meu amor, o mês mais lindo do ano começou: o mês da minha gatinha. Você é uma pessoa muito importante para mim e, com certeza, não vai passar em branco. Vamos construir uma história muito linda juntos, e eu quero sempre estar ao seu lado.`,
+  texto2: `Que essa data seja mais um marco na sua linda trajetória. Você é feita da mesma matéria dos girassóis — sempre voltada para a luz, sempre crescendo, sempre linda. Te amo muito.`,
 
   /* ── fotos da carta ── */
   foto1: "fotosuaprovence.jpeg",
@@ -923,7 +987,7 @@ const CFG = {
   formulaOrn: "C₆H₁₂O₆ + ❤️",
 
   /* ── música ── */
-  musicaURL: "https://music.youtube.com/watch?v=0atMD082jFo",
+  musicaURL: "osol.mp3",
 
   /* ── voz ── */
   vozURL: "", // ex: "voz.mp3"
@@ -1152,13 +1216,12 @@ const pad=n=>String(n).padStart(2,'0');
 function tick(){
   const diff=CFG.dataEspecial-new Date();
   const v=diff>0?{d:Math.floor(diff/86400000),h:Math.floor((diff%86400000)/3600000),m:Math.floor((diff%3600000)/60000),s:Math.floor((diff%60000)/1000)}:{d:0,h:0,m:0,s:0};
-  ['h','c'].forEach(p=>{
+  ['h','c','sx'].forEach(p=>{
     document.getElementById(p+'-d').textContent=pad(v.d);
     document.getElementById(p+'-h').textContent=pad(v.h);
     document.getElementById(p+'-m').textContent=pad(v.m);
     document.getElementById(p+'-s').textContent=pad(v.s);
-    
-  });
+});
   if(diff<=0&&!zerouCtr){zerouCtr=true;triggerFogos();}
 }
 tick();setInterval(tick,1000);
