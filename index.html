@@ -61,24 +61,7 @@
     --sb: env(safe-area-inset-bottom, 0px);
   }
 
-  /* MODO NOITE */
-  body.noite {
-    --sun:          #FFD700;
-    --sun-deep:     #FFC200;
-    --sun-light:    #FEF3C7;
-    --sun-pale:     #1A1200;
-    --sun-ghost:    #120E00;
-    --leaf:         #2E6B38;
-    --leaf-light:   #4A9959;
-    --white:        #1C1600;
-    --cream:        #180F00;
-    --text-dark:    #FEF3C7;
-    --text-mid:     #FDE68A;
-    --text-soft:    #F5C430;
-    --shad:         rgba(0,0,0,.55);
-    --card-bg:      rgba(30,22,0,.78);
-    --card-border:  rgba(245,196,48,.22);
-  }
+  
 
   /* ── RESET ─────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -119,10 +102,7 @@
       #FEF9C3 0%, #FDE68A 35%, #F5C430 70%, #E8A800 100%);
     text-align:center; gap:0; position:relative;
   }
-  body.noite #tHome {
-    background: radial-gradient(ellipse at 50% 20%,
-      #1A1200 0%, #251A00 45%, #1A1000 100%);
-  }
+  
 
   /* onda decorativa no fundo */
   #tHome::after {
@@ -130,37 +110,30 @@
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 110'%3E%3Cpath fill='%23FFFEF7' fill-opacity='.5' d='M0,60L60,65C120,70,240,80,360,78C480,76,600,60,720,54C840,48,960,48,1080,54C1200,60,1320,74,1380,81L1440,88L1440,110H0Z'/%3E%3C/svg%3E") no-repeat bottom/cover;
     pointer-events:none; z-index:0;
   }
-  body.noite #tHome::after { opacity:0; }
+  
 
   /* Fórmulas químicas decorativas */
   .quim-bg {
     position:absolute; inset:0; pointer-events:none; z-index:0;
     overflow:hidden; opacity:.06;
   }
-  body.noite .quim-bg { opacity:.14; }
+ 
   .quim-bg span {
     position:absolute; font-family:var(--fm);
     font-size:clamp(10px,2.3vw,14px); color:var(--brown);
     white-space:nowrap;
   }
-  body.noite .quim-bg span { color:var(--sun-light); }
+  
 
-  /* Banner noite */
-  #banNoite {
-    position:absolute; top:calc(var(--st)+10px); left:50%; transform:translateX(-50%);
-    background:rgba(0,0,0,.3); color:var(--sun-light);
-    font-family:var(--fb); font-size:11px; font-style:italic;
-    padding:4px 14px; border-radius:999px; display:none;
-    backdrop-filter:blur(6px); white-space:nowrap; z-index:5;
-  }
-  body.noite #banNoite { display:block; }
+ 
+  
 
   .home-lab {
     font-family:var(--fm); font-size:10px; letter-spacing:3px;
     color:var(--brown); text-transform:uppercase; opacity:.6;
     margin-bottom:4px; position:relative; z-index:2;
   }
-  body.noite .home-lab { color:var(--sun-light); }
+
 
   .home-titulo {
     font-family:var(--fd); font-size:clamp(22px,6vw,34px);
@@ -168,7 +141,7 @@
     margin-bottom:10px; position:relative; z-index:2;
     text-shadow:0 2px 10px rgba(255,255,255,.5);
   }
-  body.noite .home-titulo { color:var(--sun-light); }
+  
 
   /* Card mensagem do dia */
   #msgDia {
@@ -204,7 +177,7 @@
     width:min(240px,64vw); height:min(240px,64vw);
     animation:spinMol 20s linear infinite; opacity:.15;
   }
-  body.noite .mol-ring { opacity:.28; }
+
   @keyframes spinMol { to { transform:rotate(360deg); } }
 
   .home-hint {
@@ -220,7 +193,7 @@
     font-style:italic; color:var(--brown); margin-bottom:8px;
     position:relative; z-index:2;
   }
-  body.noite .ctr-label { color:var(--sun-light); }
+ 
   .ctr-grid { display:flex; gap:8px; justify-content:center; position:relative; z-index:2; }
   .ctr-item {
     background:var(--card-bg); backdrop-filter:blur(10px);
@@ -232,7 +205,7 @@
     font-family:var(--fm); font-size:clamp(22px,6vw,32px);
     font-weight:500; color:var(--brown); line-height:1; display:block;
   }
-  body.noite .ctr-num { color:var(--sun); }
+
   .ctr-txt {
     font-size:9px; letter-spacing:1.5px; text-transform:uppercase;
     color:var(--text-soft); margin-top:3px; display:block; font-family:var(--fm);
@@ -242,7 +215,7 @@
      CARTA
   ════════════════════════════════════════ */
   #tCarta { background:var(--cream); justify-content:flex-start; transition:background .6s; }
-  body.noite #tCarta { background:var(--sun-ghost); }
+ 
 
   .carta-wrap { max-width:480px; width:100%; display:flex; flex-direction:column; gap:16px; padding-bottom:20px; }
 
@@ -263,7 +236,7 @@
   @keyframes balancear { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
   .carta-para { font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text-soft); }
   .carta-nome { font-family:var(--fd); font-size:clamp(24px,6.5vw,36px); font-weight:700; color:var(--brown); }
-  body.noite .carta-nome { color:var(--sun-light); }
+
 
   /* Corpo */
   .carta-corpo {
@@ -307,7 +280,7 @@
     font-size:18px; flex-shrink:0; box-shadow:0 3px 10px var(--shad);
   }
   .btn-voz-titulo { font-family:var(--fd); font-size:14px; font-weight:600; color:var(--brown); display:block; }
-  body.noite .btn-voz-titulo { color:var(--sun-light); }
+ 
   .btn-voz-sub { font-family:var(--fb); font-size:11px; color:var(--text-soft); font-style:italic; }
   .voz-ondas { display:flex; align-items:center; gap:3px; margin-left:auto; }
   .voz-ondas span { display:block; width:3px; background:var(--sun-rich); border-radius:999px; opacity:.3; }
@@ -336,7 +309,7 @@
 
   /* Cartas desbloqueáveis */
   .cartas-titulo { font-family:var(--fd); font-size:clamp(15px,4.5vw,19px); font-weight:700; color:var(--brown); margin-bottom:2px; animation:fadeUp .6s ease .55s both; }
-  body.noite .cartas-titulo { color:var(--sun-light); }
+
   .cartas-sub { font-family:var(--fb); font-size:12px; color:var(--text-soft); font-style:italic; margin-bottom:10px; animation:fadeUp .6s ease .6s both; }
   .cartas-grid { display:flex; flex-direction:column; gap:9px; animation:fadeUp .6s ease .65s both; }
   .carta-card {
@@ -354,17 +327,17 @@
   .carta-footer { text-align:center; animation:fadeUp .6s ease .7s both; }
   .footer-deco { font-size:18px; letter-spacing:10px; opacity:.5; display:block; margin-bottom:10px; }
   .btn-back { background:transparent; border:2px solid var(--sun-rich); color:var(--brown); font-family:var(--fb); font-size:12px; padding:9px 22px; border-radius:999px; cursor:pointer; transition:all .2s; }
-  body.noite .btn-back { color:var(--sun-light); border-color:var(--sun); }
+
   .btn-back:active { background:var(--sun); color:var(--brown); }
 
   /* ════════════════════════════════════════
      TIMELINE
   ════════════════════════════════════════ */
   #tTimeline { background:var(--cream); justify-content:flex-start; transition:background .6s; }
-  body.noite #tTimeline { background:var(--sun-ghost); }
+
   .tl-wrap { max-width:480px; width:100%; padding-bottom:20px; }
   .tl-titulo { font-family:var(--fd); font-size:clamp(20px,5.5vw,28px); font-weight:700; color:var(--brown); text-align:center; margin-bottom:3px; animation:fadeUp .6s ease both; }
-  body.noite .tl-titulo { color:var(--sun-light); }
+
   .tl-sub { font-family:var(--fb); font-size:12px; color:var(--text-soft); font-style:italic; text-align:center; margin-bottom:22px; animation:fadeUp .6s ease .1s both; }
   .tl-trilho { position:relative; padding-left:38px; }
   .tl-trilho::before { content:''; position:absolute; left:15px; top:8px; bottom:8px; width:2px; background:linear-gradient(to bottom, var(--sun), var(--leaf-light) 60%, transparent); }
@@ -373,14 +346,14 @@
   .tl-card { background:var(--card-bg); border:1.5px solid var(--card-border); border-radius:14px; padding:12px 14px; box-shadow:0 3px 12px var(--shad); transition:background .6s; }
   .tl-data { font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-soft); margin-bottom:3px; display:block; }
   .tl-evento { font-family:var(--fd); font-size:14px; font-weight:600; color:var(--brown); margin-bottom:3px; }
-  body.noite .tl-evento { color:var(--sun-light); }
+  
   .tl-desc { font-family:var(--fb); font-size:12px; line-height:1.65; color:var(--text-dark); font-style:italic; }
 
   /* ════════════════════════════════════════
      ÁLBUM DE FOTOS
   ════════════════════════════════════════ */
   #tAlbum { background:var(--cream); justify-content:flex-start; transition:background .6s; }
-  body.noite #tAlbum { background:var(--sun-ghost); }
+ 
 
   .album-wrap { max-width:480px; width:100%; padding-bottom:20px; }
 
@@ -659,7 +632,7 @@
     display:flex; align-items:flex-start; justify-content:space-around;
     padding-top:5px; z-index:70; transition:background .6s;
   }
-  body.noite #tabBar { background:rgba(20,14,0,.94); border-color:rgba(245,196,48,.18); }
+  
   .tab-btn {
     display:flex; flex-direction:column; align-items:center;
     background:none; border:none; cursor:pointer;
@@ -670,18 +643,18 @@
   .tab-btn:active { transform:scale(.88); }
   .tab-icon { font-size:19px; }
   .tab-label { font-family:var(--fm); font-size:9px; letter-spacing:.5px; color:var(--brown); text-transform:uppercase; }
-  body.noite .tab-label { color:var(--sun-light); }
+  
 
   /* dot nova carta */
   .dot-n { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--sun-rich); margin-left:3px; vertical-align:middle; animation:piscar 1.5s ease-in-out infinite; }
 
   /* ── Overlay zero ──────────────────────────── */
   #overlayZero { position:fixed; inset:0; z-index:95; background:rgba(255,251,235,.94); backdrop-filter:blur(8px); display:none; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px; }
-  body.noite #overlayZero { background:rgba(20,14,0,.94); }
+ 
   #overlayZero.show { display:flex; animation:fadeUp .8s ease both; }
   .zero-em { font-size:50px; margin-bottom:10px; animation:balancear 2s ease-in-out infinite; }
   .zero-h { font-family:var(--fd); font-size:clamp(22px,6.5vw,38px); font-weight:700; color:var(--brown); margin-bottom:8px; }
-  body.noite .zero-h { color:var(--sun-light); }
+  
   .zero-p { font-family:var(--fb); font-size:clamp(13px,3.8vw,16px); color:var(--text-mid); font-style:italic; margin-bottom:20px; max-width:310px; }
   .btn-closeZ { background:var(--sun-rich); color:#fff; border:none; font-family:var(--fb); font-size:13px; padding:11px 26px; border-radius:999px; cursor:pointer; }
 
@@ -694,7 +667,6 @@
 <canvas id="cvPartic"></canvas>
 <canvas id="cvFogos"></canvas>
 <canvas id="cvStars"></canvas>
-<div id="banNoite">🌙 Modo noite</div>
 <div id="badge"></div>
 <button id="btnMus" title="Música">🎵</button>
 <audio id="audio" loop preload="none"></audio>
@@ -855,11 +827,6 @@
     <!-- As fotos são geradas pelo JavaScript a partir do CFG.album -->
     <div id="albumConteudo"></div>
 
-    <!-- Instrução de como adicionar fotos -->
-    <div class="album-add-info">
-      <p>📸 Para adicionar suas fotos, edite o array <strong>CFG.album</strong> no código com os links das suas imagens e as legendas desejadas.</p>
-    </div>
-  </div>
 </section>
 
 <!-- Lightbox -->
@@ -939,7 +906,7 @@
 <script>
 const CFG = {
   /* ── básico ── */
-  nomePessoa:   "Meu Amor",
+  nomePessoa:   "Yasmin",
   dataEspecial: new Date(2026, 3, 20, 0, 0, 0), // 20 abril 2026
 
   /* ── carta ── */
@@ -947,16 +914,16 @@ const CFG = {
   texto2: `Que essa data seja mais um marco na sua linda trajetória na farmácia. Você é feita da mesma matéria dos girassóis — sempre voltada para a luz, sempre crescendo, sempre linda. Te amo muito.`,
 
   /* ── fotos da carta ── */
-  foto1: "https://picsum.photos/seed/pharma1/400/500",
-  foto2: "https://picsum.photos/seed/pharma2/400/500",
-  legenda1: "Nosso momento favorito 🌻",
+  foto1: "fotosuaprovence.jpeg",
+  foto2: "fotonossaprovence.jpeg",
+  legenda1: "Voce sempre será o meu amor 🌻",
   legenda2: "Sempre juntos 💛",
 
   /* ── fórmula decorativa na carta ── */
   formulaOrn: "C₆H₁₂O₆ + ❤️",
 
   /* ── música ── */
-  musicaURL: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+  musicaURL: "https://music.youtube.com/watch?v=0atMD082jFo",
 
   /* ── voz ── */
   vozURL: "", // ex: "voz.mp3"
@@ -988,10 +955,10 @@ const CFG = {
 
   /* ── linha do tempo ── */
   timeline: [
-    { data:"O começo de tudo",       evento:"O primeiro encontro ✨",       descricao:"O dia em que tudo começou. Como uma reação em cadeia que não tem volta.", emoji:"💫" },
-    { data:"Nosso primeiro beijo",   evento:"A reação mais bonita 💋",       descricao:"Aquele instante gravado no meu coração para sempre. Sem fórmula, só sentimento.", emoji:"💋" },
-    { data:"Na faculdade",           evento:"Te vi estudando farmácia 📚",   descricao:"Vi você mergulhada nos livros e me apaixonei ainda mais pela sua dedicação.", emoji:"🔬" },
-    { data:"Nossa primeira viagem",  evento:"Aventuras juntos 🗺️",           descricao:"Descobrimos que somos a melhor companhia um para o outro.", emoji:"🌻" },
+    { data:"O começo de tudo",       evento:"Quando eu te conheci ✨",       descricao:"Através de uma piada e de um encontro da UMADEB nos conhecemos, e lá começou a nossa história..", emoji:"💫" },
+    { data:"Nossa primeira saida",   evento:"O dia do frio na barriga🌸",    descricao:"No congresso da UMADEB na Lapa, na primeira vez que saímos, foi muito especial. Quando você colocou a cabeça no meu ombro, senti um frio na barriga.", emoji:"💋" },
+    { data:"Nosso Primeiro Beijo",   evento:"O dia do beijo💋",   descricao:"Após sair do Uber, ainda com medo, o beijo que eu te dei eu não esqueço até hoje.", emoji:"💋" },
+    { data:"Nosso piquinique",  evento:"um dia perfeito🗺️",           descricao:"Um dia de piquenique ao seu lado foi maravilhoso.", emoji:"🌻" },
     { data:"20 de Abril de 2026",    evento:"O grande dia 🌟",               descricao:"Mais um aniversário ao seu lado. Que venham muitos mais, meu amor!", emoji:"🎂" },
   ],
 
@@ -1013,48 +980,85 @@ const CFG = {
   album: [
     {
       secao: "Nossos primeiros momentos",
-      url: "https://picsum.photos/seed/couple1/600/600",
-      legenda: "O começo de tudo 💛",
+      url: "lapa.jpeg",
+      legenda: "Culto na Lapa 💛",
       destaque: true,
       coracao: "💛",
     },
     {
-      url: "https://picsum.photos/seed/couple2/400/400",
+      url: "primeiroenc1.jpeg",
       legenda: "Sorrindo juntos 🌻",
       coracao: "🌻",
     },
     {
-      url: "https://picsum.photos/seed/couple3/400/400",
-      legenda: "Memória especial ⚗️",
+      url: "primeiroenc2.jpeg",
+      legenda: "culto na sua igreja⚗️",
       coracao: "💛",
     },
     {
-      secao: "Aventuras juntos",
-      url: "https://picsum.photos/seed/couple4/400/400",
-      legenda: "Explorando o mundo 🗺️",
+      secao: "Um dia Especial",
+      url: "fotonossaprovence.jpeg",
+      legenda: "um dia perfeito 🗺️",
       coracao: "🌸",
     },
     {
-      url: "https://picsum.photos/seed/couple5/400/400",
+      url: "provence1.jpeg",
       legenda: "Esse dia foi perfeito 🌻",
       coracao: "💛",
     },
     {
-      secao: "Momentos do dia a dia",
-      url: "https://picsum.photos/seed/couple6/600/400",
+      url: "provence2.jpeg",
+      legenda: "Até os dias simples são especiais com você 💛",
+      coracao: "❤️",
+    },
+    {
+      url: "fotosuaprovence.jpeg",
+      legenda: "Seu sorriso me encanta",
+      coracao: "❤️",
+    },
+    {
+      secao: "felizes",
+      url: "sorrisos1.jpeg",
+      legenda: "Rindo de tudo 😄",
+      destaque: true,
+      coracao: "🌻",
+    },
+    {
+      url: "sorrisos2.jpeg",
+      legenda: "Meu lugar favorito 💛",
+      coracao: "💛",
+    },
+    {
+      url: "sorrisos3.jpeg",
+      legenda: "Feliz com Voce 😄",
+      coracao: "🌻",
+    },
+    {
+      secao: "Nós juntos",
+      url: "nosjuntos1.jpeg",
       legenda: "Até os dias simples são especiais com você 💛",
       destaque: true,
       coracao: "❤️",
     },
     {
-      url: "https://picsum.photos/seed/couple7/400/400",
-      legenda: "Rindo de tudo 😄",
+      url: "nosjuntos2.jpeg",
+      legenda: "sempre nós S2",
       coracao: "🌻",
     },
     {
-      url: "https://picsum.photos/seed/couple8/400/400",
+      url: "nosjuntos3.jpeg",
       legenda: "Meu lugar favorito 💛",
+      coracao: "❤️",
+    },
+    {
+      url: "nosjuntos4.jpeg",
+      legenda: "amo estar com voce ❤️",
       coracao: "💛",
+    },
+    {
+      url: "nosjuntos5.jpeg",
+      legenda: "amo seus beijos 💛",
+      coracao: "❤️",
     },
   ],
 
@@ -1087,7 +1091,7 @@ if ('serviceWorker' in navigator)
   navigator.serviceWorker.register('sw.js').catch(()=>{});
 
 /* ── Preencher dados básicos ── */
-document.getElementById('homeTitulo').textContent = 'Para ' + CFG.nomePessoa + ' 🌻';
+document.getElementById('homeTitulo').textContent = 'Para ' + CFG.nomePessoa + ' 🌻 ';
 document.getElementById('cartaNome').textContent  = CFG.nomePessoa;
 document.getElementById('cartaOrn').textContent   = CFG.formulaOrn;
 document.getElementById('foto1').src  = CFG.foto1;
@@ -1115,14 +1119,7 @@ for (let i=0;i<14;i++){
 /* ── Estrelas (declaradas antes de checarNoite) ── */
 let estAtivo=false, estRAF=null;
 
-/* ── Modo Noite ── */
-function checarNoite(){
-  const h=new Date().getHours(), noite=h>=20||h<6;
-  document.body.classList.toggle('noite',noite);
-  noite ? ligarEstrelas() : desligarEstrelas();
-}
-checarNoite();
-setInterval(checarNoite,60000);
+
 
 function ligarEstrelas(){
   if(estAtivo)return;
@@ -1162,6 +1159,7 @@ function tick(){
     document.getElementById(p+'-h').textContent=pad(v.h);
     document.getElementById(p+'-m').textContent=pad(v.m);
     document.getElementById(p+'-s').textContent=pad(v.s);
+    
   });
   if(diff<=0&&!zerouCtr){zerouCtr=true;triggerFogos();}
 }
